@@ -6,7 +6,6 @@ let
 in {
   environment.systemPackages = with pkgs; [
     wget
-    git
   ];
 
   programs.fish.enable = true;

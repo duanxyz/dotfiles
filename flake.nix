@@ -67,10 +67,10 @@
 
   nixConfig = {
     substituters = [
-      "https://mirrors.ustc.edu.cn/nix-channels/store"
       "https://cache.nixos.org/"
     ];
     extra-trusted-substituters = [
+      "https://mirrors.ustc.edu.cn/nix-channels/store"
       "https://hyprland.cachix.org"
       "https://cache.garnix.io"
       "https://nix-community.cachix.org"

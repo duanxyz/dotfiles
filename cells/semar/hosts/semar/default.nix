@@ -7,6 +7,7 @@ in {
   imports = [
     cell.hardwareProfiles.semar
     cell.nixosProfiles.core
+    cell.nixosProfiles.git
     cell.users.duan
     cell.users.root
   ];
@@ -19,6 +20,7 @@ in {
         cell.homeProfiles.firefox
         cell.homeProfiles.vscode
         cell.homeProfiles.helix
+        cell.homeProfiles.git
       ];
       home.stateVersion = "23.05";
     };

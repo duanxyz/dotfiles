@@ -8,6 +8,7 @@ in {
     cell.hardwareProfiles.semar
     cell.nixosProfiles.core
     cell.nixosProfiles.git
+    cell.nixosProfiles.fish
     cell.users.duan
     cell.users.root
   ];
@@ -21,6 +22,7 @@ in {
         cell.homeProfiles.vscode
         cell.homeProfiles.helix
         cell.homeProfiles.git
+        cell.homeProfiles.fish
       ];
       home.stateVersion = "23.05";
     };
@@ -58,6 +60,8 @@ in {
   nix.settings.trusted-users = [
     "duan"
   ];
+
+  users.defaultUserShell = pkgs.fish;
 
   system.stateVersion = "23.05";
 }

@@ -1,0 +1,62 @@
+{
+    "fish-ssh-agent": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "fish-ssh-agent",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "scarvalhojr",
+            "repo": "fish-ssh-agent",
+            "rev": "master",
+            "sha256": "sha256-cFroQ7PSBZ5BhXzZEKTKHnEAuEu8W9rFrGZAb8vTgIE=",
+            "type": "github"
+        },
+        "version": "master"
+    },
+    "fisher": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "fisher",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "jorgebucaran",
+            "repo": "fisher",
+            "rev": "4.4.4",
+            "sha256": "sha256-e8gIaVbuUzTwKtuMPNXBT5STeddYqQegduWBtURLT3M=",
+            "type": "github"
+        },
+        "version": "4.4.4"
+    },
+    "gitnow": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "gitnow",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "joseluisq",
+            "repo": "gitnow",
+            "rev": "2.11.0",
+            "sha256": "sha256-eImCiEhhbXOkwQqRgpqw481i0Wg4c5nADQlG/O+OH0E=",
+            "type": "github"
+        },
+        "version": "2.11.0"
+    }
+}

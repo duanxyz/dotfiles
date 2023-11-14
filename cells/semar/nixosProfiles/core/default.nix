@@ -7,6 +7,4 @@ in {
   environment.systemPackages = with pkgs; [
     wget
   ];
-
-  programs.fish.enable = true;
 }

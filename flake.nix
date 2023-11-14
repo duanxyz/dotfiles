@@ -51,7 +51,10 @@
         (functions "nixosProfiles")
         (functions "homeProfiles")
 
+        #
         (functions "users")
+        (functions "lib")
+        (functions "packages")
 
         # configurations can be deployed
         nixosConfigurations

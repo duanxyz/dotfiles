@@ -4,5 +4,6 @@ in {
   home.packages = with unstable; [
     rnix-lsp
     alejandra
+    nvfetcher
   ];
 }

@@ -5,11 +5,11 @@
     pname = "fish-ssh-agent";
     version = "master";
     src = fetchFromGitHub {
-      owner = "scarvalhojr";
-      repo = "fish-ssh-agent";
+      owner = "ivakyb";
+      repo = "fish_ssh_agent";
       rev = "master";
       fetchSubmodules = false;
-      sha256 = "sha256-cFroQ7PSBZ5BhXzZEKTKHnEAuEu8W9rFrGZAb8vTgIE=";
+      sha256 = "sha256-v9VZY5DCo+iWZawRKVgFvsi33UKwtriSpUzrMhL0S14=";
     };
   };
   fisher = {

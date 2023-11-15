@@ -10,6 +10,7 @@ in {
     cell.nixosProfiles.git
     cell.nixosProfiles.fish
     cell.nixosProfiles.plasma5
+    cell.nixosProfiles.ssh
     cell.users.duan
     cell.users.root
   ];

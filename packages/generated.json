@@ -11,10 +11,10 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "owner": "scarvalhojr",
-            "repo": "fish-ssh-agent",
+            "owner": "ivakyb",
+            "repo": "fish_ssh_agent",
             "rev": "master",
-            "sha256": "sha256-cFroQ7PSBZ5BhXzZEKTKHnEAuEu8W9rFrGZAb8vTgIE=",
+            "sha256": "sha256-v9VZY5DCo+iWZawRKVgFvsi33UKwtriSpUzrMhL0S14=",
             "type": "github"
         },
         "version": "master"

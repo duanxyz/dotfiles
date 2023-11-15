@@ -8,4 +8,4 @@ fetch.github = "jorgebucaran/fisher"
 
 [fish-ssh-agent]
 src.manual = "master"
-fetch.github = "scarvalhojr/fish-ssh-agent"
+fetch.github = "ivakyb/fish_ssh_agent"

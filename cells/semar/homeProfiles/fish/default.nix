@@ -31,5 +31,9 @@ in {
         src = fish-ssh-agent.src;
       }
     ];
+    interactiveShellInit = ''
+      # autostart fish_ssh_agent
+      fish_ssh_agent
+    '';
   };
 }

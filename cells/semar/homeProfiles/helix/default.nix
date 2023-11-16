@@ -34,10 +34,8 @@ in {
         };
         indent-guides = {
           render = true;
-          rainbow-option = "dim";
         };
         lsp.display-inlay-hints = true;
-        rainbow-brackets = true;
         statusline.center = ["position-percentage"];
         true-color = true;
         whitespace.characters = {

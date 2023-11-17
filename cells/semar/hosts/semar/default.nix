@@ -26,6 +26,7 @@ in {
         cell.homeProfiles.helix
         cell.homeProfiles.git
         cell.homeProfiles.fish
+        cell.homeProfiles.alacritty
       ];
       home.stateVersion = "23.05";
     };

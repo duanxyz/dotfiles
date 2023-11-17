@@ -1,6 +1,10 @@
 {inputs}: let
   inherit (inputs) nixpkgs bee;
   inherit (nixpkgs) pkgs;
+  tartarus = builtins.fetchGit {
+    url = "https://github.com/AllJavi/tartarus-grub";
+    rev = "b116360a2a0991062a4d728cb005dfd309fbb82a";
+  };
 in {
   inherit bee;
 
@@ -38,6 +42,7 @@ in {
     enable = true;
     efiSupport = true;
     efiInstallAsRemovable = true;
+    theme = "${tartarus}/tartarus";
   };
 
   networking = {

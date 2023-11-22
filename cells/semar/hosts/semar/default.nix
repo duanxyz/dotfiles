@@ -57,6 +57,22 @@ in {
   };
   programs.nm-applet.enable = true;
 
+  services.tlp = {
+    enable = true;
+    settings = {
+      # Do not suspend USB devices
+      USB_AUTOSUSPEND = 0;
+
+      # Operation mode when no power supply can be detected: AC, BAT.
+      TLP_DEFAULT_MODE = "BAT";
+
+      # Operation mode select: 0=depend on power source, 1=always use TLP_DEFAULT_MODE
+      TLP_PERSISTENT_DEFAULT = 1;
+    };
+  };
+  powerManagement.powertop.enable = true;
+  services.power-profiles-daemon.enable = false;
+  
   time.timeZone = "Asia/Makassar";
 
   nix.settings.trusted-users = [

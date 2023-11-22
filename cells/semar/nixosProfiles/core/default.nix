@@ -11,5 +11,6 @@ in {
     wget
     bash
     dash
+    powertop
   ];
 }

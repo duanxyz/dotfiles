@@ -1,6 +1,10 @@
-{inputs}: let
+{
+  inputs,
+  cell,
+}: let
   inherit (inputs) nixpkgs bee;
   inherit (nixpkgs) pkgs;
+
   tartarus = builtins.fetchGit {
     url = "https://github.com/AllJavi/tartarus-grub";
     rev = "b116360a2a0991062a4d728cb005dfd309fbb82a";
@@ -9,6 +13,7 @@ in {
   inherit bee;
 
   imports = [
+    ./_extraHosts.nix
     cell.hardwareProfiles.semar
     cell.nixosProfiles.core
     cell.nixosProfiles.fonts
@@ -56,13 +61,11 @@ in {
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
-  # programs.fish.enable = true;
-
   nix.settings.trusted-users = [
     "duan"
   ];
 
-  users.defaultUserShell = pkgs.fish;
+  environment.binsh = "${pkgs.dash}/bin/dash";
 
   system.stateVersion = "23.05";
 }

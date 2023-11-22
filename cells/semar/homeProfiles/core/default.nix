@@ -1,7 +1,10 @@
-let
-  inherit (inputs) unstable;
+{
+  inputs,
+  cell,
+}: let
+  inherit (inputs.nixpkgs) pkgs;
 in {
-  home.packages = with unstable; [
+  home.packages = with pkgs; [
     rnix-lsp
     alejandra
     nvfetcher

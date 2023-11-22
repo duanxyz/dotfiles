@@ -1,4 +1,7 @@
-let
+{
+  inputs,
+  cell,
+}: let
   inherit
     (inputs.nixpkgs)
     pkgs
@@ -6,5 +9,7 @@ let
 in {
   environment.systemPackages = with pkgs; [
     wget
+    bash
+    dash
   ];
 }

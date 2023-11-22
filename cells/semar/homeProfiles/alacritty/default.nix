@@ -3,13 +3,12 @@
   cell,
   ...
 }: let
-  inherit (inputs.unstable) pkgs;
+  inherit (inputs.nixpkgs) pkgs;
   schemes = import ./_config/schemes.nix;
   SHELL = /run/current-system/sw/bin/fish;
 in {
   programs.alacritty = {
     enable = true;
-    package = pkgs.alacritty;
     settings = {
       imports = [
         ./_config/fonts.nix

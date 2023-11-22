@@ -1,4 +1,7 @@
-let
+{
+  inputs,
+  cell,
+}: let
   inherit (inputs) nixos-hardware nixpkgs;
   inherit (nixpkgs) lib;
 in {

@@ -1,4 +1,7 @@
 {
+  inputs,
+  cell,
+}: {
   programs.git = {
     enable = true;
     lfs.enable = true;

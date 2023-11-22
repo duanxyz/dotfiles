@@ -1,4 +1,7 @@
-let
+{
+  inputs,
+  cell,
+}: let
   inherit (inputs.nixpkgs) pkgs;
 in {
   users.users.duan = {
@@ -7,5 +10,6 @@ in {
     extraGroups = [
       "wheel"
     ];
+    shell = pkgs.fish;
   };
 }

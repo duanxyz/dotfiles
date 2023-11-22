@@ -3,11 +3,10 @@
   cell,
   ...
 }: let
-  inherit (inputs.unstable) pkgs;
+  inherit (inputs.nixpkgs) pkgs;
 in {
   programs.kitty = {
     enable = true;
-    package = pkgs.kitty;
     theme = "Gruvbox Material Dark Soft";
     font = {
       name = "JetBrains Mono Nerd Font";

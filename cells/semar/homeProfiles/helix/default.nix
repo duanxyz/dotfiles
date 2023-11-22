@@ -1,26 +1,23 @@
-let
-  inherit (inputs.unstable) pkgs lib;
-  helix-wrap = pkgs.symlinkJoin {
-    name = "${lib.getName pkgs.helix}-wrapped-${lib.getVersion pkgs.helix}";
-    paths = [pkgs.helix];
-    preferLocalBuild = true;
-    nativeBuildInputs = [pkgs.makeWrapper];
-    postBuild = ''
-      wrapProgram $out/bin/hx \
-        --prefix PATH : ${lib.makeBinPath [
-        pkgs.nil
-        pkgs.taplo
-        pkgs.yaml-language-server
-        pkgs.tree-sitter
-      ]}
-    '';
-  };
+{
+  inputs,
+  cell,
+}: let
+  inherit (inputs.nixpkgs) pkgs lib;
 in {
   xdg.configFile."helix/themes".source = ./_config/themes;
 
   programs.helix = {
     enable = true;
-    package = helix-wrap;
+    extraPackages = with pkgs; [
+      nil
+      taplo
+      yaml-language-server
+      tree-sitter
+      nodePackages.bash-language-server
+      nodePackages.vscode-css-languageserver-bin
+      nodePackages.vscode-langservers-extracted
+      shellcheck
+    ];
 
     settings = {
       theme = "gruvbox_material_dark_medium";
@@ -49,26 +46,53 @@ in {
     };
 
     languages = {
-      language = [
-        {
-          name = "bash";
-          auto-format = true;
-          formatter = {
-            command = "${pkgs.shfmt}/bin/shfmt";
-            args = ["-i" "2"];
-          };
-        }
-      ];
+      language = let
+        prettier = lang: {
+          command = "${pkgs.nodePackages.prettier}/bin/prettier";
+          args = ["--parser" lang];
+        };
+        prettierLangs = map (e: {
+          name = e;
+          formatter = prettier e;
+        });
+        langs = ["css" "scss" "json" "html"];
+      in
+        [
+          {
+            name = "bash";
+            auto-format = true;
+            formatter = {
+              command = "${pkgs.shfmt}/bin/shfmt";
+              args = ["-i" "2"];
+            };
+          }
+        ]
+        ++ prettierLangs langs;
       grammar = [
         {
           name = "nix";
           source = pkgs.tree-sitter-grammars.tree-sitter-nix;
         }
       ];
+
       language-server = {
         nil = {
           command = lib.getExe pkgs.nil;
           config.nil.formatting.command = ["${lib.getExe pkgs.alejandra}" "-q"];
+        };
+
+        bash-language-server = {
+          command = "${pkgs.nodePackages.bash-language-server}/bin/bash-language-server";
+          args = ["start"];
+        };
+
+        vscode-css-language-server = {
+          command = "${pkgs.nodePackages.vscode-css-languageserver-bin}/bin/css-languageserver";
+          args = ["--stdio"];
+          config = {
+            provideFormatter = true;
+            css.validate.enable = true;
+          };
         };
       };
     };

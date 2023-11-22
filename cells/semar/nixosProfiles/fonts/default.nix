@@ -1,9 +1,14 @@
 {
+  inputs,
+  cell,
+}: let
+  inherit (inputs.nixpkgs) pkgs;
+in {
   fonts = {
-    enableDefaultFonts = false;
+    enableDefaultPackages = false;
     fontDir.enable = true;
 
-    fonts = with inputs.nixpkgs; [
+    packages = with pkgs; [
       material-design-icons
       font-awesome
 

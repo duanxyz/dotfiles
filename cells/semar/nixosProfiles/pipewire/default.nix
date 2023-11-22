@@ -10,5 +10,5 @@
 
   security.rtkit.enable = true;
 
-  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.enable = false;
 }

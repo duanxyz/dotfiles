@@ -21,6 +21,7 @@ in {
     cell.nixosProfiles.fish
     cell.nixosProfiles.plasma5
     cell.nixosProfiles.ssh
+    cell.nixosProfiles.pipewire
     cell.users.duan
     cell.users.root
   ];

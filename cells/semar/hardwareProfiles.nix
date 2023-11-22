@@ -3,7 +3,7 @@
   cell,
 }: let
   inherit (inputs) nixos-hardware nixpkgs;
-  inherit (nixpkgs) lib;
+  inherit (nixpkgs) pkgs lib;
 in {
   semar = {
     imports = [
@@ -28,5 +28,24 @@ in {
     boot.extraModprobeConfig = ''
       options iwlwifi 11n_disable=1
     '';
+
+    environment.systemPackages = with pkgs; [
+      libva-utils
+      vdpauinfo
+    ];
+
+    hardware.opengl = {
+      enable = true;
+      driSupport32Bit = true;
+      extraPackages = with pkgs; [
+        intel-compute-runtime
+        vaapiVdpau
+      ];
+      extraPackages32 = with pkgs.pkgsi686Linux; [
+        intel-media-driver
+        intel-vaapi-driver
+        vaapiIntel
+      ];
+    };
   };
 }

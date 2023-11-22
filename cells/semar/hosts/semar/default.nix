@@ -58,9 +58,6 @@ in {
 
   time.timeZone = "Asia/Makassar";
 
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
-
   nix.settings.trusted-users = [
     "duan"
   ];

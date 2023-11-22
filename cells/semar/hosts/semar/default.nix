@@ -72,12 +72,26 @@ in {
   };
   powerManagement.powertop.enable = true;
   services.power-profiles-daemon.enable = false;
-  
+
   time.timeZone = "Asia/Makassar";
 
-  nix.settings.trusted-users = [
-    "duan"
-  ];
+  nix = {
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 14d";
+    };
+    settings = {
+      trusted-users = [
+        "root"
+        "@wheel"
+      ];
+      allowed-users = [
+        "@wheel"
+      ];
+      auto-optimise-store = true;
+    };
+  };
 
   environment.binsh = "${pkgs.dash}/bin/dash";
 

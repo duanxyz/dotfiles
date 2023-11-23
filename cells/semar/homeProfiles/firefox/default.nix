@@ -6,6 +6,6 @@
 in {
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox-devedition;
+    package = inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin;
   };
 }

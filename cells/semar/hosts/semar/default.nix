@@ -49,6 +49,7 @@ in {
     efiSupport = true;
     efiInstallAsRemovable = true;
     theme = "${tartarus}/tartarus";
+    splashImage = null;
   };
 
   networking = {

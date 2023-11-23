@@ -24,10 +24,9 @@ in {
     hardware.enableRedistributableFirmware = true;
     hardware.cpu.intel.updateMicrocode = lib.mkDefault true;
 
-    #fix bug iwlwifi
-    boot.extraModprobeConfig = ''
-      options iwlwifi 11n_disable=1
-    '';
+    # boot.extraModprobeConfig = ''
+      # options iwlwifi 11n_disable=1
+    # '';
 
     environment.systemPackages = with pkgs; [
       libva-utils

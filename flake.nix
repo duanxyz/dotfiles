@@ -20,7 +20,7 @@
 
   inputs = {
     nixpkgs.follows = "nixpkgs-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.05";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -32,6 +32,11 @@
       url = "github:nix-community/flake-firefox-nightly";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+  };
+
+  inputs.hyprland = {
+    url = "github:hyprwm/Hyprland";
+    inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -75,6 +80,9 @@
 
   nixConfig = {
     substituters = [
+      "https://mirrors.ustc.edu.cn/nix-channels/store"
+      "https://hyprland.cachix.org"
+      "https://cache.garnix.io"
       "https://cache.nixos.org/"
     ];
     extra-trusted-substituters = [

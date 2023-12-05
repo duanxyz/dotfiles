@@ -17,9 +17,7 @@ in {
     cell.hardwareProfiles.semar
     cell.nixosProfiles.core
     cell.nixosProfiles.fonts
-    # cell.nixosProfiles.git
-    # cell.nixosProfiles.fish
-    cell.nixosProfiles.plasma5
+    cell.nixosProfiles.hyprland
     cell.nixosProfiles.ssh
     cell.nixosProfiles.pipewire
     cell.users.duan
@@ -38,6 +36,7 @@ in {
         cell.homeProfiles.fish
         cell.homeProfiles.alacritty
         cell.homeProfiles.kitty
+        cell.homeProfiles.hyprland
       ];
       home.stateVersion = "23.05";
     };

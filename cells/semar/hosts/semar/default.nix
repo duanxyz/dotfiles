@@ -39,6 +39,8 @@ in {
         cell.homeProfiles.alacritty
         cell.homeProfiles.kitty
         cell.homeProfiles.hyprland
+        cell.homeProfiles.swayidle
+        cell.homeProfiles.swaylock
       ];
       home.stateVersion = "23.05";
     };

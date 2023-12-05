@@ -9,6 +9,8 @@ in {
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
 
+  security.pam.services.swaylock = {};
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 

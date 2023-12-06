@@ -21,8 +21,14 @@ in {
     '';
   };
 
+  services.cliphist = {
+    enable = true;
+    systemdTarget = "hyprland-session.target";
+  };
+
   home.packages = with pkgs; [
     wbg
     brightnessctl
+    wl-clipboard
   ];
 }

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+dir="$(cd "$(dirname "$0")" && pwd -P)"
+
+## Run
+rofi \
+  -dmenu \
+  -theme ${dir}/config.rasi

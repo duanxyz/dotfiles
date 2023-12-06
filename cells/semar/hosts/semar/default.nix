@@ -41,6 +41,7 @@ in {
         cell.homeProfiles.hyprland
         cell.homeProfiles.swayidle
         cell.homeProfiles.swaylock
+        cell.homeProfiles.rofi
       ];
       home.stateVersion = "23.05";
     };

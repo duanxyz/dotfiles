@@ -16,7 +16,7 @@ in {
 
       ${builtins.readFile ./_config/basic.conf}
       ${builtins.readFile ./_config/keybinds.conf}
-      
+
       source = ~/.config/hypr/extra.conf
     '';
   };
@@ -24,6 +24,22 @@ in {
   services.cliphist = {
     enable = true;
     systemdTarget = "hyprland-session.target";
+  };
+
+  gtk = {
+    enable = true;
+    theme = {
+      package = pkgs.nordic;
+      name = "Nordic";
+    };
+    cursorTheme = {
+      package = pkgs.nordzy-cursor-theme;
+      name = "Nordzy-cursors";
+    };
+    iconTheme = {
+      package = pkgs.nordzy-icon-theme;
+      name = "Nordzy";
+    };
   };
 
   home.packages = with pkgs; [

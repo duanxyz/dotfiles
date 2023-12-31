@@ -17,7 +17,7 @@ in {
     cell.hardwareProfiles.semar
     cell.nixosProfiles.core
     cell.nixosProfiles.fonts
-    cell.nixosProfiles.git
+    # cell.nixosProfiles.git
     cell.nixosProfiles.fish
     cell.nixosProfiles.plasma5
     cell.nixosProfiles.ssh

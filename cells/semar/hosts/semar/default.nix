@@ -18,7 +18,7 @@ in {
     cell.nixosProfiles.core
     cell.nixosProfiles.fonts
     # cell.nixosProfiles.git
-    cell.nixosProfiles.fish
+    # cell.nixosProfiles.fish
     cell.nixosProfiles.plasma5
     cell.nixosProfiles.ssh
     cell.nixosProfiles.pipewire

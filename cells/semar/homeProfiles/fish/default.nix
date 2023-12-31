@@ -3,40 +3,46 @@
   cell,
 }: let
   inherit (inputs.nixpkgs) pkgs;
-in {
-  home.packages = with pkgs.fishPlugins; [
-    hydro
-    z
-    autopair
-    sponge
-    done
+  defaultPlugins = with pkgs.fishPlugins; [
+    {
+      name = "hydro";
+      src = hydro.src;
+    }
+    {
+      name = "z";
+      src = z.src;
+    }
+    {
+      name = "autopair";
+      src = autopair.src;
+    }
+    {
+      name = "sponge";
+      src = sponge.src;
+    }
+    {
+      name = "done";
+      src = done.src;
+    }
   ];
-
+in {
   programs.fish = {
     enable = true;
-    plugins = with cell.packages.default; [
-      # {
-      #   name = "gitnow";
-      #   src = pkgs.fetchFromGitHub {
-      #     owner = "joseluisq";
-      #     repo = "gitnow";
-      #     rev = "2.11.0";
-      #     fetchSubmodules = false;
-      #     sha256 = "sha256-eImCiEhhbXOkwQqRgpqw481i0Wg4c5nADQlG/O+OH0E=";
-      #   };
-      # }
-      {
-        name = fisher.pname;
-        src = fisher.src;
-      }
-      {
-        name = fish-ssh-agent.pname;
-        src = fish-ssh-agent.src;
-      }
-    ];
     interactiveShellInit = ''
       # autostart fish_ssh_agent
       fish_ssh_agent
     '';
+    plugins = with cell.packages.default;
+      [
+        {
+          name = fisher.pname;
+          src = fisher.src;
+        }
+        {
+          name = fish-ssh-agent.pname;
+          src = fish-ssh-agent.src;
+        }
+      ]
+      ++ defaultPlugins;
   };
 }

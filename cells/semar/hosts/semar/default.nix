@@ -43,14 +43,20 @@ in {
     };
   };
 
-  boot.loader.grub = {
-    device = "nodev";
-    enable = true;
-    efiSupport = true;
-    efiInstallAsRemovable = true;
-    theme = "${tartarus}/tartarus";
-    splashImage = null;
+  boot.loader = {
+    efi.canTouchEfiVariables = true;
+    grub = {
+      device = "nodev";
+      enable = true;
+      efiSupport = true;
+      # efiInstallAsRemovable = true;
+      theme = "${tartarus}/tartarus";
+      splashImage = null;
+      useOSProber = true;
+    };
   };
+
+  boot.supportedFilesystems = [ "ntfs" ];
 
   networking = {
     hostName = "semar";
@@ -93,6 +99,8 @@ in {
       auto-optimise-store = true;
     };
   };
+
+  nix.settings.experimental-features = [ "nix-command flakes" ];
 
   environment.binsh = "${pkgs.dash}/bin/dash";
 

@@ -11,5 +11,6 @@ in {
       "wheel"
     ];
     shell = pkgs.fish;
+    ignoreShellProgramCheck = true;
   };
 }

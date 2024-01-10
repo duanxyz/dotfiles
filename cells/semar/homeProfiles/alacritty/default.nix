@@ -37,7 +37,7 @@ in {
 
       draw_bold_text_with_bright_colors = true;
 
-      colors = schemes.gruvbox_material_soft_dark;
+      colors = schemes.nord;
 
       cursor = {
         style = "Beam";

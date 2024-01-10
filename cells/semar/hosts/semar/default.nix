@@ -40,6 +40,7 @@ in {
         cell.homeProfiles.swayidle
         cell.homeProfiles.swaylock
         cell.homeProfiles.rofi
+        cell.homeProfiles.ags
       ];
       home.stateVersion = "23.05";
     };
@@ -81,6 +82,7 @@ in {
   };
   powerManagement.powertop.enable = true;
   services.power-profiles-daemon.enable = false;
+  services.upower.enable = true;
 
   time.timeZone = "Asia/Makassar";
 

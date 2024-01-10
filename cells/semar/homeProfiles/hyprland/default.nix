@@ -13,7 +13,9 @@ in {
     package = null;
     extraConfig = ''
       exec-once = wbg ${./_config/background.png} &
-
+      exec-once = sway-audio-idle-inhibit
+      exec-once = ags -b hyp
+      
       ${builtins.readFile ./_config/basic.conf}
       ${builtins.readFile ./_config/keybinds.conf}
 

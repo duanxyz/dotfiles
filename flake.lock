@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "ags": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1703934913,
+        "narHash": "sha256-ICPSBWQBPVthW1uXxFizOfuNU3SEf+rf/tfJD89mWRk=",
+        "owner": "Aylur",
+        "repo": "ags",
+        "rev": "6a892994287b52ee3014dedfb41cec9fb675875b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Aylur",
+        "repo": "ags",
+        "type": "github"
+      }
+    },
     "blank": {
       "locked": {
         "lastModified": 1625557891,
@@ -728,6 +748,7 @@
     },
     "root": {
       "inputs": {
+        "ags": "ags",
         "disko": "disko",
         "firefox": "firefox",
         "hive": "hive",

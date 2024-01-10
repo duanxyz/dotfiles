@@ -1,0 +1,28 @@
+{
+  "name": "ags-dotfiles",
+  "version": "1.6.3",
+  "description": "My config files for AGS",
+  "main": "config.js",
+  "scripts": {
+      "lint": "eslint . --fix",
+      "stylelint": "stylelint ./scss --fix"
+  },
+  "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Aylur/dotfiles.git"
+  },
+  "author": "Aylur",
+  "bugs": {
+      "url": "https://github.com/Aylur/dotfiles/issues"
+  },
+  "homepage": "https://github.com/Aylur/dotfiles#readme",
+  "kofi": "https://ko-fi.com/aylur",
+  "devDependencies": {
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-prettier": "^5.1.2",
+    "prettier": "^3.1.1"
+  }
+}

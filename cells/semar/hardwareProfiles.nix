@@ -24,9 +24,9 @@ in {
     hardware.enableRedistributableFirmware = true;
     hardware.cpu.intel.updateMicrocode = lib.mkDefault true;
 
-    boot.extraModprobeConfig = ''
-      options iwlmvm power_scheme=1
-    '';
+    # boot.extraModprobeConfig = ''
+    #   options iwlmvm power_scheme=1
+    # '';
 
     environment.systemPackages = with pkgs; [
       libva-utils

@@ -20,7 +20,7 @@ in {
     ];
 
     settings = {
-      theme = "gruvbox_material_dark_medium";
+      theme = "nord";
       editor = {
         color-modes = true;
         cursorline = true;

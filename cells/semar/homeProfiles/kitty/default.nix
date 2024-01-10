@@ -5,14 +5,16 @@
 }: let
   inherit (inputs.nixpkgs) pkgs;
 in {
+  xdg.configFile."kitty/Nord.conf".source = ./_config/Nord.conf;
   programs.kitty = {
     enable = true;
-    theme = "Gruvbox Material Dark Soft";
+    # theme = "Nord";
     font = {
       name = "JetBrains Mono Nerd Font";
       size = 16.0;
     };
     settings = {
+      include = "./Nord.conf";
       remember_window_size = "no";
       initial_window_width = 1080;
       initial_window_height = 600;

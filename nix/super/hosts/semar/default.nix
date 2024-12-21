@@ -23,6 +23,8 @@ in {
       imports = [
         cell.homeProfiles.core
         cell.homeProfiles.git
+        cell.homeProfiles.chromium
+        cell.homeProfiles.vscode
       ];
       home.stateVersion = "24.11";
     };

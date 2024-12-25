@@ -11,6 +11,7 @@ in {
     cell.hardwareProfiles.semar
     cell.nixosProfiles.core
     cell.nixosProfiles.pipewire
+    cell.nixosProfiles.auto-cpufreq
     cell.nixosProfiles.ssh
     cell.nixosProfiles.plasma
     cell.users.duan

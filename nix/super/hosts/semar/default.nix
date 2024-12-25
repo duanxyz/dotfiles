@@ -73,6 +73,11 @@ in {
     };
   };
 
+  security = {
+    polkit.enable = true;
+    audit.enable = true;
+  };
+
   nix.settings.experimental-features = ["nix-command flakes"];
 
   environment.binsh = "${pkgs.dash}/bin/dash";

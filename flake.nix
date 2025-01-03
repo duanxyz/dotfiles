@@ -29,6 +29,10 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware";
   };
 
+  inputs = {
+    hyprland.url = "github:hyprwm/Hyprland";
+  };
+
   outputs = {
     self,
     std,

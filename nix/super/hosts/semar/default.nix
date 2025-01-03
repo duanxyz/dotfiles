@@ -14,13 +14,14 @@ in {
     cell.nixosProfiles.pipewire
     cell.nixosProfiles.auto-cpufreq
     cell.nixosProfiles.ssh
-    cell.nixosProfiles.plasma
+    cell.nixosProfiles.sddm
+    cell.nixosProfiles.hyprland
     cell.users.duan
     cell.users.root
   ];
 
   home-manager = {
-    # backupFileExtension = "rebuild";
+    backupFileExtension = "rebuild";
     users.duan = {
       imports = [
         cell.homeProfiles.core
@@ -28,6 +29,7 @@ in {
         cell.homeProfiles.git
         cell.homeProfiles.chromium
         cell.homeProfiles.vscode
+        cell.homeProfiles.hyprland
       ];
       home.stateVersion = "24.11";
     };

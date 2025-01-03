@@ -1,0 +1,5 @@
+{
+  gestures = {
+    workspace_swipe = "on";
+  };
+}

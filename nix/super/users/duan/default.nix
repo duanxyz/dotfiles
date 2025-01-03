@@ -9,7 +9,7 @@
     extraGroups = [
       "wheel"
     ];
-    shell = pkgs.nushell;
+    shell = pkgs.bash;
     # ignoreShellProgramCheck = true;
   };
 }

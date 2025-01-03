@@ -7,5 +7,6 @@
     nil
     alejandra
     xdg-utils
+    warp-terminal
   ];
 }

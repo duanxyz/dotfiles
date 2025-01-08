@@ -10,6 +10,7 @@ in {
   imports = [
     cell.hardwareProfiles.semar
     cell.nixosProfiles.core
+    cell.nixosProfiles.fonts
     cell.nixosProfiles.pipewire
     cell.nixosProfiles.auto-cpufreq
     cell.nixosProfiles.ssh
@@ -23,6 +24,7 @@ in {
     users.duan = {
       imports = [
         cell.homeProfiles.core
+        cell.homeProfiles.fonts
         cell.homeProfiles.git
         cell.homeProfiles.chromium
         cell.homeProfiles.vscode

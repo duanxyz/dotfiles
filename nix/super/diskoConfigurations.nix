@@ -116,7 +116,7 @@
             "size=2G"
             "defaults"
             "mode=1777"
-            "noexec"
+            # "noexec"
             "nodev"
             "nosuid"
           ];

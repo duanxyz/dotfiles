@@ -30,6 +30,7 @@ in {
         cell.homeProfiles.chromium
         cell.homeProfiles.vscode
         cell.homeProfiles.hyprland
+        cell.homeProfiles.agenix
       ];
       home.stateVersion = "24.11";
     };

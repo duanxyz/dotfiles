@@ -9,6 +9,7 @@
       inherit (inputs.nixpkgs) system;
       config.allowUnfree = true;
       overlays = [
+        inputs.ragenix.overlays.default
       ];
     };
   };

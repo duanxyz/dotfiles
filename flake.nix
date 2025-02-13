@@ -5,6 +5,7 @@
     hive = {
       url = "github:divnix/hive";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.std.follows = "std";
     };
 
     std = {
@@ -14,6 +15,11 @@
 
     disko = {
       url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    haumea = {
+      url = "github:nix-community/haumea";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -33,6 +39,11 @@
     hyprland = {
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    hy3 = {
+      url = "github:outfoxxed/hy3";
+      inputs.hyprland.follows = "hyprland";
     };
 
     agenix = {

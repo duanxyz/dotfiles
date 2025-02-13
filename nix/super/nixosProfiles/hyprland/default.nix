@@ -39,5 +39,6 @@ in {
   environment.systemPackages = with pkgs; [
     brightnessctl
     hyprpolkitagent
+    wl-clipboard-rs
   ];
 }

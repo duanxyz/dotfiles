@@ -1,0 +1,35 @@
+export NIXOS_OZONE_WL=1
+
+export GDK_SCALE=1
+export GDK_DPI_SCALE=1.0
+# export NO_AT_BRIDGE=1
+export WLR_NO_HARDWARE_CURSORS=1
+export WLR_RENDERER=vulkan
+
+# Backend Toolkit
+export GDK_BACKEND=wayland
+export QT_QPA_PLATFORM=wayland
+export SDL_VIDEODRIVER=wayland
+export CLUTTER_BACKEND=wayland
+
+# Qt Variables
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+export QT_SCALE_FACTOR=1
+
+# Theming
+# export GTK_THEME=
+# export XCURSOR_THEME=
+export XCURSOR_SIZE=24
+
+# Specific Applications
+export MOZ_ENABLE_WAYLAND=1
+export ELECTRON_OZONE_PLATFORM_HINT=auto
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# XDG 
+# uwsm users don’t need to explicitly set XDG environment variables, 
+# as uwsm sets them, automatically.
+# export XDG_CURRENT_DESKTOP=Hyprland
+# export XDG_SESSION_TYPE=wayland
+# export XDG_SESSION_DESKTOP=Hyprland
+export XDG_ACTIVATION_TOKEN=1

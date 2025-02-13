@@ -1,49 +1,71 @@
-{
-  "$mod" = "SUPER";
+let
+  mod = "SUPER";
+in {
+  binds = {
+    workspace_back_and_forth = true;
+  };
 
   bind = [
-    "$mod, B, exec, brave"
-    "$mod, RETURN, exec, warp-terminal"
-    "$mod, Q, killactive,"
-    "$mod, F, fullscreen, 1"
-    "$mod, P, pseudo," # dwindle
-    "$mod, J, togglesplit," # dwindle
-    "$mod, R, exec, hyprctl reload"
+    # Run Applications
+    "${mod}, B, exec, uwsm-app -- brave"
+    "${mod}, RETURN, exec, uwsm-app -- kitty"
+    "${mod}, C, exec, uwsm-app -- codium"
+
+    # Window Control
+    "${mod}, Q, killactive"
+    "${mod}, F, fullscreen, 1"
+    "${mod}, Space, togglefloating"
+    "${mod}, GRAVE, togglespecialworkspace, scratchpad"
+    "${mod} SHIFT, GRAVE, movetoworkspace, special:scratchpad"
+    "${mod}, Space, togglefloating"
+    "${mod}, S, togglesplit,"
+    "${mod}, R, exec, hyprctl reload"
+    ''${mod} ALT, R, exec, hyprctl --batch "animations:enabled false ; keyword decoration:blur:enabled false"''
 
     # Move focus with mod + arrow keys
-    "$mod, left, movefocus, l"
-    "$mod, right, movefocus, r"
-    "$mod, up, movefocus, u"
-    "$mod, down, movefocus, d"
+    "${mod}, left, movefocus, l"
+    "${mod}, right, movefocus, r"
+    "${mod}, up, movefocus, u"
+    "${mod}, down, movefocus, d"
 
-    "$mod, H, movefocus, l"
-    "$mod, L, movefocus, r"
-    "$mod, K, movefocus, u"
-    "$mod, J, movefocus, d"
+    "${mod}, H, movefocus, l"
+    "${mod}, L, movefocus, r"
+    "${mod}, K, movefocus, u"
+    "${mod}, J, movefocus, d"
 
-    # Switch workspaces with mod + [0-9]
-    "$mod, 1, workspace, 1"
-    "$mod, 2, workspace, 2"
-    "$mod, 3, workspace, 3"
-    "$mod, 4, workspace, 4"
-    "$mod, 5, workspace, 5"
-    "$mod, 6, workspace, 6"
-    "$mod, 7, workspace, 7"
-    "$mod, 8, workspace, 8"
-    "$mod, 9, workspace, 9"
-    "$mod, 0, workspace, 10"
+    # Workspace Navigation
+    "${mod}, 1, workspace, 1"
+    "${mod}, 2, workspace, 2"
+    "${mod}, 3, workspace, 3"
+    "${mod}, period, workspace, +1"
+    "${mod}, comma, workspace, -1"
 
-    # Move active window to a workspace with mod + SHIFT + [0-9]
-    "$mod SHIFT, 1, movetoworkspace, 1"
-    "$mod SHIFT, 2, movetoworkspace, 2"
-    "$mod SHIFT, 3, movetoworkspace, 3"
-    "$mod SHIFT, 4, movetoworkspace, 4"
-    "$mod SHIFT, 5, movetoworkspace, 5"
-    "$mod SHIFT, 6, movetoworkspace, 6"
-    "$mod SHIFT, 7, movetoworkspace, 7"
-    "$mod SHIFT, 8, movetoworkspace, 8"
-    "$mod SHIFT, 9, movetoworkspace, 9"
-    "$mod SHIFT, 0, movetoworkspace, 10"
+    # Move active window to a workspace
+    "${mod} SHIFT, 1, movetoworkspace, 1"
+    "${mod} SHIFT, 2, movetoworkspace, 2"
+    "${mod} SHIFT, 3, movetoworkspace, 3"
+    "${mod} SHIFT, left, movetoworkspace, l"
+    "${mod} SHIFT, right, movetoworkspace, r"
+
+    # Precise window reisizing
+    "${mod} CTRL, H, resizeactive, -50 0"
+    "${mod} CTRL, L, resizeactive, 50 0"
+    "${mod} CTRL, K, resizeactive, 0 -50"
+    "${mod} CTRL, J, resizeactive, 0 50"
+
+    # Smart Aspect Ratio Control
+    "${mod} SHIFT, H, resizeactive, exact 640 480"
+    "${mod} SHIFT, L, resizeactive, exact 854 480"
+    "${mod} SHIFT, K, resizeactive, exact 960 540"
+
+    # Pixel-perfect Movement
+    "${mod} CTRL, left, movewindow, l"
+    "${mod} CTRL, right, movewindow, r"
+    "${mod} CTRL, up, movewindow, u"
+    "${mod} CTRL, down, movewindow, d"
+
+    # Workspace Warping
+    "${mod}, Tab, workspace, previous"
   ];
 
   bindel = [

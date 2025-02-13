@@ -1,0 +1,11 @@
+# Session Management
+export HYPRLAND_NO_SD_NOTIFY=1
+export UWSM_SESSION=1
+
+# Advanced Hybrid Rendering (intel)
+export AQ_DEBUG=0
+export HYPRLAND_LOG_WLR=1
+export HYPRLAND_NO_RT=0
+export WLR_DRM_NO_ATOMIC=1
+
+

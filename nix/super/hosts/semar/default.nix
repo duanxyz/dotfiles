@@ -31,6 +31,7 @@ in {
         cell.homeProfiles.vscode
         cell.homeProfiles.hyprland
         cell.homeProfiles.agenix
+        cell.homeProfiles.hyprpaper
       ];
       home.stateVersion = "24.11";
     };

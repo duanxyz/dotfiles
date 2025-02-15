@@ -1,5 +1,7 @@
 let
-  mod = "SUPER";
+  mod = " SUPER";
+  modSHIFT = " SUPER_SHIFT";
+  modAlt = " SUPER_ALT";
 in {
   binds = {
     workspace_back_and_forth = true;
@@ -15,12 +17,12 @@ in {
     "${mod}, Q, killactive"
     "${mod}, F, fullscreen, 1"
     "${mod}, Space, togglefloating"
-    "${mod}, GRAVE, togglespecialworkspace, scratchpad"
-    "${mod} SHIFT, GRAVE, movetoworkspace, special:scratchpad"
-    "${mod}, Space, togglefloating"
-    "${mod}, S, togglesplit,"
+    "${mod}, S, togglesplit"
+    "${modSHIFT}, F, settiled"
     "${mod}, R, exec, hyprctl reload"
-    ''${mod} ALT, R, exec, hyprctl --batch "animations:enabled false ; keyword decoration:blur:enabled false"''
+    ''${modAlt}, R, exec, hyprctl --batch "animations:enabled false ; keyword decoration:blur:enabled false"''
+    "${mod}, GRAVE, togglespecialworkspace, term"
+    "${modSHIFT}, GRAVE, movetoworkspace, special:term"
 
     # Move focus with mod + arrow keys
     "${mod}, left, movefocus, l"
@@ -41,22 +43,11 @@ in {
     "${mod}, comma, workspace, -1"
 
     # Move active window to a workspace
-    "${mod} SHIFT, 1, movetoworkspace, 1"
-    "${mod} SHIFT, 2, movetoworkspace, 2"
-    "${mod} SHIFT, 3, movetoworkspace, 3"
-    "${mod} SHIFT, left, movetoworkspace, l"
-    "${mod} SHIFT, right, movetoworkspace, r"
-
-    # Precise window reisizing
-    "${mod} CTRL, H, resizeactive, -50 0"
-    "${mod} CTRL, L, resizeactive, 50 0"
-    "${mod} CTRL, K, resizeactive, 0 -50"
-    "${mod} CTRL, J, resizeactive, 0 50"
-
-    # Smart Aspect Ratio Control
-    "${mod} SHIFT, H, resizeactive, exact 640 480"
-    "${mod} SHIFT, L, resizeactive, exact 854 480"
-    "${mod} SHIFT, K, resizeactive, exact 960 540"
+    "${modSHIFT}, 1, movetoworkspace, 1"
+    "${modSHIFT}, 2, movetoworkspace, 2"
+    "${modSHIFT}, 3, movetoworkspace, 3"
+    "${modSHIFT}, left, movetoworkspace, l"
+    "${modSHIFT}, right, movetoworkspace, r"
 
     # Pixel-perfect Movement
     "${mod} CTRL, left, movewindow, l"
@@ -66,6 +57,23 @@ in {
 
     # Workspace Warping
     "${mod}, Tab, workspace, previous"
+  ];
+
+  binde = [
+    # Precise window reisizing
+    "${modAlt}, H, resizeactive, -50 0"
+    "${modAlt}, L, resizeactive, 50 0"
+    "${modAlt}, K, resizeactive, 0 -50"
+    "${modAlt}, J, resizeactive, 0 50"
+    "${modAlt}, left, resizeactive, -50 0"
+    "${modAlt}, right, resizeactive, 50 0"
+    "${modAlt}, up, resizeactive, 0 -50"
+    "${modAlt}, down, resizeactive, 0 50"
+
+    # Smart Aspect Ratio Control
+    "${modSHIFT}, H, resizeactive, exact 640 480"
+    "${modSHIFT}, L, resizeactive, exact 854 480"
+    "${modSHIFT}, K, resizeactive, exact 960 540"
   ];
 
   bindel = [

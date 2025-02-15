@@ -4,11 +4,10 @@
     # Workspace Assignment Rules
     # ---------------------------
     # Workspace 1: Browser
-    "workspace 1, class:^(Brave-.*)$"
+    "workspace 1, class:^(Brave-.*|brave-.*)$"
 
     # Workspace 2: IDE/Code Editor`
-    "workspace 2, class:^(codium)$"
-    "stayfocused, class:^(codium)$"
+    "workspace 2, class:^(codium|VSCodium)$"
 
     # Workspace 3: Terminal
     "workspace 3, class:^(kitty|dev.warp.Warp|waveterm)$"
@@ -34,8 +33,8 @@
     "move 72% 7%, title:^(Picture in picture)$"
 
     # Temporary Windows
-    "float, class:^(.*)$, title:^(.*)(open)(.*)$"
-    "float, class:^(.*)$, title:^(.*)(File)(.*)$"
+    "float, class:^(xdg-desktop-portal-gtk)$"
+    "float, title:^(Save As|Open File|Open Folder)$"
 
     # ---------------------------
     # Workspace Management Rules
@@ -46,7 +45,8 @@
 
   # Special Workspaces
   workspace = [
-    "special:scratchpad, gapsin:0, gapsout:0, border:false, on-created-empty:kill"
-    "special:scratchpad, on-created-empty:kitty "
+    "special:term, gapsin:0, gapsout:100, border:false, shadow:false, on-created-empty:kill"
+    "special:term, on-created-empty:kitty"
+    "r[2-3], gapsout:50"
   ];
 }

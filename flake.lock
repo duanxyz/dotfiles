@@ -395,26 +395,6 @@
         "type": "github"
       }
     },
-    "hy3": {
-      "inputs": {
-        "hyprland": [
-          "hyprland"
-        ]
-      },
-      "locked": {
-        "lastModified": 1738976400,
-        "narHash": "sha256-V5akAPMR311XTVtNPalGowcVSlGDGUGj26Bq1cgo76E=",
-        "owner": "outfoxxed",
-        "repo": "hy3",
-        "rev": "833c52e642afbf6a5a95a078580a0fbce118848f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "outfoxxed",
-        "repo": "hy3",
-        "type": "github"
-      }
-    },
     "hyprcursor": {
       "inputs": {
         "hyprlang": [
@@ -878,7 +858,6 @@
         "haumea": "haumea",
         "hive": "hive",
         "home-manager": "home-manager_2",
-        "hy3": "hy3",
         "hyprland": "hyprland",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": [

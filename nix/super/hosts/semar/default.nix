@@ -32,6 +32,7 @@ in {
         cell.homeProfiles.hyprland
         cell.homeProfiles.agenix
         cell.homeProfiles.hyprpaper
+        cell.homeProfiles.helix
       ];
       home.stateVersion = "24.11";
     };
